@@ -56,7 +56,7 @@ console.log('---  Stretch Goals  ---');
 console.log('7. Showing supplyChanges with "for of" loop');
 
 for (items of supplyChangesArray){
-  console.log(items);
+  console.log('supplyChanges', items);
 }
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
