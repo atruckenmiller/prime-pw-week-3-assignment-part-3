@@ -54,7 +54,7 @@ for ( let index = 0; index < supplyChangesArray.length; index++){
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
-
+let items = 0;
 for (items of supplyChangesArray){
   console.log('supplyChanges', items);
 }
