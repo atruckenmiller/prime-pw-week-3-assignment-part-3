@@ -11,7 +11,7 @@ console.log('partsNeeded:', partsNeeded);
 //    the following numbers: 3, 5, -6, 0, 7, 11
 console.log('2. Array of supplyChanges:');
 let supplyChangesArray = [ 3, 5, -6, 0, 7, 11];
-console.log('Numbers are:', supplyChangesArray);
+console.log('Numbers are:', 11);
 
 // 3. Console log the value of 'supplyChanges' at index 2
 console.log('3. Item at index 2 is:');
@@ -20,7 +20,7 @@ console.log('Item at Index 2:', supplyChangesArray[2]);
 // 4. The last item was added by mistake. Remove it from the 'supplyChanges'
 //    array & console.log the value removed.
 console.log('4. Removed item:');
-supplyChangesArray.pop()
+supplyChangesArray.pop(11)
 console.log('Removed the last number:', supplyChangesArray);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
@@ -44,9 +44,6 @@ for ( let index = 0; index < supplyChangesArray.length; index++){
   if( supplyChangesArray[index] < 0 ){
     console.log('Part count', supplyChangesArray[index]);
   }
-  if( supplyChangesArray[index] == 0 ){
-
-  }
 }
 
 
@@ -54,31 +51,44 @@ for ( let index = 0; index < supplyChangesArray.length; index++){
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
-let items = 0;
-for (items of supplyChangesArray){
-  console.log('supplyChanges', items);
+
+for (let item of supplyChangesArray){
+  if(item == 0){
+    item+=0
+  }
+  if (item < 0){
+    console.log('supplyChanges', item);
+  }
+  if (item > 0){
+    console.log('supplyChanges', item);
+  }
 }
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
-index = 0;
+let index = 0;
+
 while(index < supplyChangesArray.length){
   if (supplyChangesArray[index] > 0) {
-  console.log("added", supplyChangesArray[index], "parts");
-}
+    console.log("added", supplyChangesArray[index], "parts");
+  }
   if (supplyChangesArray[index] < 0){
-  console.log('Part count', supplyChangesArray[index]);
-}
-index = index + 1;
+    console.log('Part count', supplyChangesArray[index]);
+  }
+  index = index + 1;
 }
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
-console.log('9. Total supplies available is:');
-// console.log(supplyChangesArray);
-let total = 0;
 
-for (index of supplyChangesArray){
-  total = index + total
+// Code Explanation: I decided to use parts + total; to find the running total, and started out with 0; and then for each part added in,
+// I used it to get the running total of items from the supplyChanges Array.
+console.log('9. Total supplies available is:');
+
+let total = 0;
+let parts = 0;
+
+for (parts of supplyChangesArray){
+  total = parts + total
   console.log('Running Total', total);
 }
